@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AnimeAra1 — عالم الأنمي</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="#"><span class="logo-mark">🎬</span> <span class="logo-text">AnimeAra1</span></a>
+      </div>
+
+      <nav class="main-nav">
+        <a class="nav-link active" href="#" data-route="home">الرئيسية</a>
+        <a class="nav-link" href="#all" data-route="all">الأنميات</a>
+        <a class="nav-link" href="#about" data-route="about">حول</a>
+      </nav>
+
+      <div class="header-actions">
+        <input id="search-input" class="search" type="search" placeholder="ابحث عن أنمي أو حلقة..." />
+        <select id="genre-filter" class="select">
+          <option value="">كل الأنواع</option>
+        </select>
+        <button id="theme-toggle" class="btn small">ليلي/نهاري</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <h1>مرحباً بك في <span class="accent">AnimeAra1</span></h1>
+          <p class="muted">أكبر مكتبة أنميات قابلة للتوسيع — شاهد الحلقات، تصفح القوائم، واختر الجودة المناسبة.</p>
+          <div class="hero-cta">
+            <a href="#all" class="btn large">تصفح الأنميات</a>
+            <a href="#latest" class="btn outline">آخر الإضافات</a>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="featured-card" id="featured-card">
+            <!-- filled by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LATEST -->
+    <section class="section container" id="latest">
+      <h2 class="section-title">آخر الحلقات المضافة</h2>
+      <div id="latest-grid" class="anime-grid"></div>
+    </section>
+
+    <!-- ALL ANIME -->
+    <section id="all" class="section container">
+      <h2 class="section-title">كل الأنميات</h2>
+      <div id="all-grid" class="anime-grid"></div>
+    </section>
+
+    <!-- DETAIL (hidden view) -->
+    <section id="detail-view" class="section container detail-view" style="display:none;">
+      <button id="back-to-list" class="btn small">رجوع</button>
+      <div id="detail-card" class="detail-card"></div>
+      <div id="episodes-list" class="episodes-list"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section container about">
+      <h2 class="section-title">حول AnimeAra1</h2>
+      <p>
+        AnimeAra1 — منصة أنمي متقدمة تجمع بيانات الأنميات، تفاصيل الحلقات، ومشغل فيديو مدمج. تقدر تضيف أو تعدّل الأنميات عبر ملف <code>script.js</code>.
+      </p>
+      <p class="muted">للتواصل: <a href="mailto:contact@animeara1.com">contact@animeara1.com</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p>© <span id="year"></span> AnimeAra1 — جميع الحقوق محفوظة</p>
+        <div class="socials">
+          <a href="https://instagram.com/animeara1" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://facebook.com/animeara1" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://tiktok.com/@animeara1" target="_blank" rel="noopener">TikTok</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- VIDEO MODAL -->
+  <div id="video-modal" class="modal" aria-hidden="true">
+    <div class="modal-backdrop"></div>
+    <div class="modal-panel">
+      <button id="close-modal" class="modal-close" aria-label="Close">✕</button>
+      <video id="modal-video" controls playsinline webkit-playsinline></video>
+      <div class="modal-meta">
+        <h3 id="modal-title">عنوان الحلقة</h3>
+        <p id="modal-desc">معلومات عن الحلقة</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
